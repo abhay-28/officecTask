@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: 'josefin sans','Arial Narrow',Arial,sans-serif;
+}
+
+
+.main_div{
+  width: 100%;  
+  height: auto;
+  min-height: 100vh;
+  background: #6983aa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.center_div{
+  width: 30%;
+  height: auto;
+  min-height: 79vh;
+  margin: 6% 0 10% 10%;
+  background-color: white;
+  box-shadow: 5px 5px 25px -5px black;
+  border-radius: 15px;
+}
+
+h1{
+  color: white;
+  background: transparent;
+  background-color: #8566aa;
+  padding: 6px 0 2px 0;
+  line-height: 50px;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px -5px black;
+}
+
+input{
+  text-align: center;
+  height: 30px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 500;
+  width: 60%;
+  border-bottom: 2px solid #8566aa;
+  outline: none;
+}
+
+button{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+   line-height: 0;
+  border-color: transparent;
+  color: #8566aa;
+  font-weight: 600;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  box-shadow: 5px 5px 15px -5px black;
+}
+
+.taskSubmit_btn >i.fa.fa-plus {
+  font-size: 22px;
+ 
+}
+
+button:hover{
+  background-color: #20bf6b;
+  color: white;
+}
+ol{
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+li.todoTask {
+  justify-content: center;
+}
+ol li{
+  padding-left: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+  min-height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #8566aa;
+  margin: 1px;
+  justify-content: space-between;
+}
+span.task_number ,.task_content{
+  margin-right: 13px;
+  color: #8566aa;
+}
+.list_style:hover .task_content ,
+  .list_style:hover .task_content span.task_number{
+  color: #fff;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.todo_style{
+  display: flex;
+  align-items: center;
+}
+span.list_btn_span {
+  display: flex;
+}
+.todo_style .fa-times-circle{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  font-size: x-large;
+  margin: 0 15px 0 35px;
+  color: red;
+  box-shadow: 5px 5px 15px -5px black;
+}
+
+
+.list_style:hover .fa-times-circle {
+  color: #ffffff;
+  background: red;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  transition: all 0.4s ease-in-out;  
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+i.fa.fa-check-circle {
+  color: #1fb138;
+  font-size: 25px;
+}
+.list_style:hover  i.fa.fa-check-circle {
+  color: #ffffff;
+  background: #1fb138;
+  border-radius: 20px;
+  width: 25px;
+  height: 25px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.list_style:hover{
+  color: white;
+  background: #8566aa;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+@media(max-width: 768px){
+  .center_div{
+    width: 86%;
+    margin: auto;
+  }
+  .list_style .fa-times-circle{
+    display: flex;
+    margin: 0 15px 0 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  button{
+    font-size: 35px;
+    font-weight: 900;
+    margin-left: 5px;
+    color: #8566aa;
+   
+  }
+  
+}

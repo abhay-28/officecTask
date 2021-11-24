@@ -1,0 +1,12 @@
+select {
+    word-wrap: normal;
+    width: 100px;
+    height: 50px;
+}
+.span_style_color{
+    color: red;
+}
+*{
+    text-transform: capitalize;   
+}
+

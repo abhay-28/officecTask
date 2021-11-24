@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Stopwatch</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <!--Stylesheet-->
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #141313;
+            width: 40%;
+            min-width: 500px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            padding: 60px 0;
+            border-radius: 10px;
+        }
+
+        .timerDisplay {
+            position: relative;
+            width: 110%;
+            background: linear-gradient(-135deg,
+                    #0048ce,
+                    #008bfd);
+            left: -5%;
+            padding: 40px 0;
+            font-family: 'Roboto mono', monospace;
+            color: #ffffff;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+        }
+
+        .buttons {
+            width: 80%;
+            margin: 60px auto 0 auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #141313;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="timerDisplay">
+            00 : 00 : 00 : 000
+        </div>
+        <div class="buttons">
+            <button id="startTimerTimer">startTimer</button>
+            <button id="resetTimer">Reset</button>
+        </div>
+    </div>
+    <!--Script-->
+    <script>
+        const numInputs = document.querySelectorAll('input[type=number]')
+
+        numInputs.forEach(function (input) {
+            input.addEventListener('change', function (e) {
+                if (e.target.value == '') {
+                    e.target.value = 0
+                }
+            })
+        })
+        var startTimer = document.getElementById('startTimer');
+        var resetTimer = document.getElementById('resetTimer');
+
+        var h = document.getElementById("hour");
+        var m = document.getElementById("minute");
+        var s = document.getElementById("sec");
+
+        //store a reference to the startTimerTimer variable
+        var startTimerTimer = null;
+
+        startTimer.addEventListener('click', function () {
+            //initialize the variable
+            function startTimerInterval() {
+                startTimerTimer = setInterval(function () {
+                    timer();
+                }, 1000);
+            }
+            startTimerInterval();
+        })
+
+        resetTimer.addEventListener('click', function () {
+            h.value = 0;
+            m.value = 0;
+            s.value = 0;
+            //stop the timer after pressing "resetTimer"
+            stopInterval()
+        })
+
+        function timer() {
+            if (h.value == 0 && m.value == 0 && s.value == 0) {
+                h.value = 0;
+                m.value = 0;
+                s.value = 0;
+            } else if (s.value != 0) {
+                s.value--;
+            } else if (m.value != 0 && s.value == 0) {
+                s.value = 59;
+                m.value--;
+            } else if (h.value != 0 && m.value == 0) {
+                m.value = 60;
+                h.value--;
+            }
+            return;
+        }
+
+        //stop the function after pressing the resetTimer button, 
+        //so the time wont go down when selecting a new time after pressing resetTimer
+        function stopInterval() {
+            clearInterval(startTimerTimer);
+        }
+    </script>
+</body>
+
+</html>
